@@ -6,6 +6,7 @@
     <title>E-Products France SARL - Mobilier en Bois de Qualité Supérieure</title>
     <style>
         :root {
+            --hero-image: url('/api/placeholder/1920/1080'); /* Hier de lokale URL van de afbeelding invoegen */
             --color-primary: #2C3E50;
             --color-secondary: #BDC3C7;
             --color-accent: #D35400;
@@ -62,12 +63,31 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--hero-image) center/cover;
+            background-position: center 25%;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
             margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
