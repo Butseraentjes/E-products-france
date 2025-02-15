@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Products France SARL - Mobilier en Bois de Qualité Supérieure</title>
+    <style>
+        :root {
+            --color-primary: #2C3E50;
+            --color-secondary: #BDC3C7;
+            --color-accent: #D35400;
+            --color-background: #F5F6FA;
+            --color-text: #2C3E50;
+            --max-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--color-background);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #E67E22;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-info h4 {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">E-Products France</a>
+            <div class="nav-links">
+                <a href="#about" class="button">À propos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content animate">
+            <h1 class="hero-title">E-Products France SARL</h1>
+            <p class="hero-subtitle">L'excellence du mobilier en bois</p>
+            <a href="https://www.tablesdepiquenique.fr" class="button">Découvrir nos produits</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate">
+                    <h2>Notre Histoire</h2>
+                    <p>E-Products France SARL est votre partenaire de confiance pour du mobilier en bois de haute qualité. Nous combinons savoir-faire traditionnel et innovation pour créer des produits durables et élégants.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="Nos produits" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info animate">
+                    <h3>Informations Légales</h3>
+                    <p>E-Products France SARL<br>
+                    7 chemin des Filatiers<br>
+                    62223 SAINTE CATHERINE</p>
+                    <p>TVA: FR 25 818931396<br>
+                    SIREN: 818 931 396<br>
+                    SIRET: 818 931 396 00019</p>
+                </div>
+                <div class="contact-info animate">
+                    <h3>Contact</h3>
+                    <p>Email: contact@tablesdepiquenique.fr</p>
+                    <p>Site web: www.tablesdepiquenique.fr</p>
+                    <p>BIC: CMCIFRPPXXX<br>
+                    IBAN: FR76 3002 7175 3300 0201 2100 116</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Prêt à découvrir nos produits?</h2>
+            <p>Visitez notre boutique en ligne pour explorer notre gamme complète</p>
+            <a href="https://www.tablesdepiquenique.fr" class="button">Visiter la boutique</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h4>E-Products France SARL</h4>
+                    <p>L'excellence du mobilier en bois</p>
+                </div>
+                <div class="footer-info">
+                    <h4>Contact</h4>
+                    <p>contact@tablesdepiquenique.fr</p>
+                </div>
+                <div class="footer-info">
+                    <h4>Légal</h4>
+                    <p>&copy; 2025 E-Products France SARL<br>Tous droits réservés</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
