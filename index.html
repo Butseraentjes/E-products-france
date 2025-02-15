@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Products France SARL - Mobilier en Bois de Qualité Supérieure</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --hero-image: url('/api/placeholder/1920/1080'); /* Hier de lokale URL van de afbeelding invoegen */
-            --color-primary: #2C3E50;
-            --color-secondary: #BDC3C7;
-            --color-accent: #D35400;
-            --color-background: #F5F6FA;
-            --color-text: #2C3E50;
+            --color-wood-dark: #5D4037;
+            --color-wood-medium: #795548;
+            --color-wood-light: #8D6E63;
+            --color-cream: #F5E6D3;
+            --color-text-dark: #2D1810;
+            --color-accent-gold: #D4AF37;
             --max-width: 1200px;
-            --spacing-unit: 1rem;
         }
 
         * {
@@ -23,22 +23,25 @@
         }
 
         body {
-            font-family: 'Nunito Sans', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             line-height: 1.6;
-            color: var(--color-text);
-            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            background-color: var(--color-cream);
+            background-image: 
+                linear-gradient(rgba(245, 230, 211, 0.9), rgba(245, 230, 211, 0.9)),
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCI+CiAgPHBhdGggZD0iTTAgMGg3MHY3MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0wIDBoMzV2MzVIMHoiIGZpbGw9IiM4RDZFNjMiIG9wYWNpdHk9IjAuMSIvPgogIDxwYXRoIGQ9Ik0zNSAzNWgzNXYzNUgzNXoiIGZpbGw9IiM4RDZFNjMiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=');
         }
 
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 var(--spacing-unit);
+            padding: 0 2rem;
         }
 
         /* Header Styles */
         .header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--color-wood-dark);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -53,27 +56,47 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--color-primary);
+            color: var(--color-cream);
             text-decoration: none;
             transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-button {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-accent-gold);
+            color: var(--color-wood-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 2px solid var(--color-accent-gold);
+        }
+
+        .nav-button:hover {
+            background: transparent;
+            color: var(--color-accent-gold);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--hero-image) center/cover;
-            background-position: center 25%;
+            background: linear-gradient(rgba(45, 24, 16, 0.3), rgba(45, 24, 16, 0.3)),
+                        url('https://cdn.shopify.com/s/files/1/0770/4697/2750/files/picknicktafel-feestelijk-romatisch-kaarslicht.png?v=1726058754') center/cover;
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
-            margin-top: 4rem;
+            color: var(--color-cream);
+            margin-top: 0;
             position: relative;
-            overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -81,38 +104,67 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            background: radial-gradient(circle at center, transparent 0%, rgba(45, 24, 16, 0.5) 100%);
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 1.2rem 2.4rem;
+            background: var(--color-accent-gold);
+            color: var(--color-wood-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--color-accent-gold);
+        }
+
+        .hero-button:hover {
+            background: transparent;
+            color: var(--color-cream);
+            border-color: var(--color-cream);
         }
 
         /* About Section */
         .about {
-            padding: 5rem 0;
-            background-color: white;
+            padding: 8rem 0;
+            background: var(--color-cream);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, var(--color-wood-dark) 50%);
         }
 
         .about-grid {
@@ -122,16 +174,60 @@
             align-items: center;
         }
 
+        .about-content {
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
         .about-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--color-primary);
+            color: var(--color-wood-dark);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--color-accent-gold);
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 0;
-            background-color: var(--color-background);
+            padding: 8rem 0;
+            background: var(--color-wood-medium);
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom left, transparent 49%, var(--color-cream) 50%);
         }
 
         .contact-grid {
@@ -141,60 +237,141 @@
         }
 
         .contact-info {
-            background-color: white;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-info h3 {
-            color: var(--color-primary);
+            color: var(--color-accent-gold);
             margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-accent-gold);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* CTA Section */
         .cta {
             padding: 5rem 0;
-            background-color: var(--color-primary);
-            color: white;
+            background: var(--color-wood-dark);
+            color: var(--color-cream);
             text-align: center;
+            position: relative;
         }
 
-        .button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--color-accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent-gold);
         }
 
-        .button:hover {
-            background-color: #E67E22;
+        .cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--color-primary);
-            color: white;
-            padding: 3rem 0;
+            background: var(--color-wood-dark);
+            color: var(--color-cream);
+            padding: 4rem 0 2rem;
+            position: relative;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-info h4 {
-            margin-bottom: 1rem;
+            color: var(--color-accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-info h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            color: var(--color-cream);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--color-accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 1s ease-out;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
             }
 
             .about-grid,
@@ -202,26 +379,46 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .about::before,
+            .contact::before {
+                height: 50px;
+            }
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Custom Wood Grain Effect */
+        .wood-grain {
+            position: relative;
         }
 
-        .animate {
-            animation: fadeIn 1s ease-out;
+        .wood-grain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(139, 69, 19, 0.1) 0px,
+                    rgba(139, 69, 19, 0.1) 2px,
+                    transparent 2px,
+                    transparent 4px
+                );
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header wood-grain">
         <nav class="nav container">
             <a href="#" class="logo">E-Products France</a>
-            <div class="nav-links">
-                <a href="#about" class="button">À propos</a>
-            </div>
+            <a href="#contact" class="nav-button">Contact</a>
         </nav>
     </header>
 
@@ -229,7 +426,7 @@
         <div class="hero-content animate">
             <h1 class="hero-title">E-Products France SARL</h1>
             <p class="hero-subtitle">L'excellence du mobilier en bois</p>
-            <a href="https://www.tablesdepiquenique.fr" class="button">Découvrir nos produits</a>
+            <a href="https://www.tablesdepiquenique.fr" class="hero-button">Découvrir nos produits</a>
         </div>
     </section>
 
@@ -238,63 +435,5 @@
             <div class="about-grid">
                 <div class="about-content animate">
                     <h2>Notre Histoire</h2>
-                    <p>E-Products France SARL est votre partenaire de confiance pour du mobilier en bois de haute qualité. Nous combinons savoir-faire traditionnel et innovation pour créer des produits durables et élégants.</p>
-                </div>
-                <div class="about-image">
-                    <img src="/api/placeholder/600/400" alt="Nos produits" style="width: 100%; height: auto;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info animate">
-                    <h3>Informations Légales</h3>
-                    <p>E-Products France SARL<br>
-                    7 chemin des Filatiers<br>
-                    62223 SAINTE CATHERINE</p>
-                    <p>TVA: FR 25 818931396<br>
-                    SIREN: 818 931 396<br>
-                    SIRET: 818 931 396 00019</p>
-                </div>
-                <div class="contact-info animate">
-                    <h3>Contact</h3>
-                    <p>Email: contact@tablesdepiquenique.fr</p>
-                    <p>Site web: www.tablesdepiquenique.fr</p>
-                    <p>BIC: CMCIFRPPXXX<br>
-                    IBAN: FR76 3002 7175 3300 0201 2100 116</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>Prêt à découvrir nos produits?</h2>
-            <p>Visitez notre boutique en ligne pour explorer notre gamme complète</p>
-            <a href="https://www.tablesdepiquenique.fr" class="button">Visiter la boutique</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <h4>E-Products France SARL</h4>
-                    <p>L'excellence du mobilier en bois</p>
-                </div>
-                <div class="footer-info">
-                    <h4>Contact</h4>
-                    <p>contact@tablesdepiquenique.fr</p>
-                </div>
-                <div class="footer-info">
-                    <h4>Légal</h4>
-                    <p>&copy; 2025 E-Products France SARL<br>Tous droits réservés</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    <p>E-Products France SARL est votre partenaire de confiance pour du mobilier en bois de haute qualité. Notre passion pour le travail du bois et notre engagement envers l'excellence nous permettent de créer des pièces uniques qui allient beauté, durabilité et fonctionnalité.</p>
+                    <p>Chaque meuble est
